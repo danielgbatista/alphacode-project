@@ -1,0 +1,162 @@
+<router-outlet />
+<app-header/>
+<section id="form-container">
+  <form>
+    <div id="fields-container">
+      <div class="customer-input">
+        <input
+          name="fullName"
+          type="text"
+          placeholder="Ex.: Letícia Pacheco dos Santos"
+          [(ngModel)]="contact.fullName"
+        >
+        <label
+          for="fullName"
+        >
+          Nome completo
+        </label>
+      </div>
+      <div class="customer-input">
+        <input
+          name="birthDate"
+          type="text"
+          placeholder="Ex.: 03/10/2023"
+          [(ngModel)]="contact.birthDate"
+          mask="00/00/0000"
+        >
+        <label
+          for="birthDate"
+        >
+          Data de nascimento
+        </label>
+      </div>
+      <div class="customer-input">
+        <input
+          name="email"
+          type="text"
+          placeholder="Ex.: leticia@gmail.com"
+          [(ngModel)]="contact.email"
+        >
+        <label
+          for="email"
+        >
+          E-mail
+        </label>
+      </div>
+      <div class="customer-input">
+        <input
+          name="job"
+          type="text"
+          placeholder="Ex.: Desenvolvedora Web"
+          [(ngModel)]="contact.job"
+        >
+        <label
+          for="job"
+        >
+          Profissão
+        </label>
+      </div>
+      <div class="customer-input">
+        <input
+          name="phone"
+          type="text"
+          placeholder="Ex.: (11) 4033-2019"
+          [(ngModel)]="contact.phone"
+          mask="(00) 0000-0000"
+        >
+        <label
+          for="phone"
+        >
+          Telefone para contato
+        </label>
+      </div>
+      <div class="customer-input">
+        <input
+          name="cellPhone"
+          type="text"
+          placeholder="Ex.: (11) 98493-2039"
+          [(ngModel)]="contact.cellPhone"
+          mask="(00) 00000-0000"
+        >
+        <label
+          for="cellPhone"
+        >
+          Celular para contato
+        </label>
+      </div>
+    </div>
+    <div id="checkboxes-container">
+      <div class="checkbox-container">
+        <input
+          name="hasWhatsapp"
+          type="checkbox"
+          [(ngModel)]="contact.hasWhatsapp"
+        >
+        <label
+          for="hasWhatsapp"
+        >
+          Número de celular possui Whatsapp
+        </label>
+      </div>
+      <div class="checkbox-container">
+        <input
+          name="sendEmailNotification"
+          type="checkbox"
+          [(ngModel)]="contact.sendEmailNotification"
+        >
+        <label
+          for="sendEmailNotification"
+        >
+          Enviar notificações por E-mail
+        </label>
+      </div>
+      <div class="checkbox-container">
+        <input
+          name="sendSmsNotification"
+          type="checkbox"
+          [(ngModel)]="contact.sendSmsNotification"
+        >
+        <label
+          for="sendSmsNotification"
+        >
+          Enviar notificações por SMS
+        </label>
+      </div>
+    </div>
+    <div id="button-container">
+      <button (click)="onSubmit()" id="customer-button">
+        <span>Cadastrar contato</span>
+      </button>
+    </div>
+  </form>
+</section>
+<section id="table-container">
+  <table id="table-content">
+    <thead id="table-header">
+      <tr id="header-row">
+        <th class="header-text">Nome</th>
+        <th class="header-text">Data de nascimento</th>
+        <th class="header-text">E-mail</th>
+        <th class="header-text">Celular para contato</th>
+        <th class="header-text">Ações</th>
+      </tr>
+    </thead>
+    <tbody id="table-body" >
+      <tr class="contact-row" *ngFor="let contact of contacts$ | async">
+        <td class="contact-column">{{ contact.fullName }}</td>
+        <td class="contact-column">{{ contact.birthDate | date : 'dd/MM/yyyy' }}</td>
+        <td class="contact-column">{{ contact.email }}</td>
+        <td class="contact-column">{{ contact.cellPhone }}</td>
+        <td class="options-container">
+          <div (click)="fillFields(contact.id)" class="icon-button">
+            <img src="../../../assets/edit-icon.png" alt="atualizar">
+          </div>
+          <div (click)="onDelete(contact.id)" class="icon-button">
+            <img src="../../../assets/delete-icon.png" alt="excluir">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<app-footer/>

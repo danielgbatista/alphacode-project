@@ -1,0 +1,40 @@
+# Ignorar diretórios de saída compilados dentro da pasta app-alphacode
+app-alphacode/dist
+app-alphacode/tmp
+app-alphacode/out-tsc
+app-alphacode/bazel-out
+
+# Node.js
+app-alphacode/node_modules
+app-alphacode/npm-debug.log
+app-alphacode/yarn-error.log
+
+# IDEs e editores
+app-alphacode/.idea/
+app-alphacode/.project
+app-alphacode/.classpath
+app-alphacode/.c9/
+app-alphacode/*.launch
+app-alphacode/.settings/
+app-alphacode/*.sublime-workspace
+
+# Visual Studio Code
+app-alphacode/.vscode/*
+!app-alphacode/.vscode/settings.json
+!app-alphacode/.vscode/tasks.json
+!app-alphacode/.vscode/launch.json
+!app-alphacode/.vscode/extensions.json
+app-alphacode/.history/*
+
+# Miscelânea
+app-alphacode/.angular/cache
+app-alphacode/.sass-cache/
+app-alphacode/.connect.lock
+app-alphacode/coverage
+app-alphacode/libpeerconnection.log
+app-alphacode/testem.log
+app-alphacode/typings
+
+# Arquivos do sistema
+app-alphacode/.DS_Store
+app-alphacode/Thumbs.db

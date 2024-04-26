@@ -1,0 +1,14 @@
+#header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+#title-page{
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+}
+

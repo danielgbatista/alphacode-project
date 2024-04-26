@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --primary-color: #108cce;
+  --secondary-color: #FAFAFA;
+}
+
+body {
+  width: 98vw;
+  min-height: 100vh;
+}
